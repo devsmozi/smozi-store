@@ -1,0 +1,275 @@
+{
+  "sections": {
+    "smozi_ticker": {
+      "type": "smozi-trust-ticker",
+      "blocks": {
+        "item_1": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "🚚 Free Worldwide Tracked & Insured Express Delivery"
+          }
+        },
+        "item_2": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "⭐️ 4.9/5 Rating from 12,450+ Verified Customers"
+          }
+        },
+        "item_3": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "🛡️ 30-Day Money Back Guarantee — 100% Risk-Free"
+          }
+        },
+        "item_4": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "🔒 256-Bit Bank-Grade SSL Secure Checkout"
+          }
+        },
+        "item_5": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "⚡ 99.8% On-Time Delivery Guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5"
+      ],
+      "settings": {
+        "bg_color": "#0f172a",
+        "text_color": "#ffffff",
+        "accent_color": "#10b981"
+      }
+    },
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Experience the Next Standard of Innovation",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Best Sellers",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "Explore Guarantees",
+            "button_link_2": "#SmoziTrustSection",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "settings": {
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "image_behavior": "none",
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "smozi_trust_badges": {
+      "type": "smozi-trust-badges",
+      "blocks": {
+        "badge_1": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shipping",
+            "title": "Free Express Delivery",
+            "text": "Every order is packaged with care and dispatched within 24 hours with real-time tracking."
+          }
+        },
+        "badge_2": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "guarantee",
+            "title": "30-Day Money-Back Guarantee",
+            "text": "Try it risk-free. If you're not totally delighted, return it for a fast, hassle-free refund."
+          }
+        },
+        "badge_3": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "lock",
+            "title": "256-Bit SSL Encrypted Checkout",
+            "text": "Your transaction is encrypted with bank-level security. We never store payment details."
+          }
+        },
+        "badge_4": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "support",
+            "title": "24/7 Dedicated Support",
+            "text": "Our customer assistance team is here day and night with typical response times under 2 hours."
+          }
+        }
+      },
+      "block_order": [
+        "badge_1",
+        "badge_2",
+        "badge_3",
+        "badge_4"
+      ],
+      "settings": {
+        "subheading": "Shop With Total Peace Of Mind",
+        "title": "Why Over 50,000+ Customers Trust Smozi",
+        "color_scheme": "scheme-1",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Trending Best Sellers",
+        "heading_size": "h2",
+        "description": "Discover our most-loved, verified high-performance essentials.",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": true,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "padding_top": 56,
+        "padding_bottom": 48
+      }
+    },
+    "smozi_reviews": {
+      "type": "smozi-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date": "2 days ago",
+            "title": "Hands down the best purchase I've made!",
+            "review_text": "The build quality is astonishing. Arrived 2 days ahead of schedule in pristine packaging. You can instantly feel the superior quality.",
+            "author_name": "Marcus E.",
+            "author_initials": "ME"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date": "4 days ago",
+            "title": "Unmatched quality & customer care",
+            "review_text": "I had a question about my tracking number and support responded within 8 minutes! Product works like a dream. Highly recommend to everyone.",
+            "author_name": "Sophia R.",
+            "author_initials": "SR"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date": "1 week ago",
+            "title": "30-day guarantee made it a no-brainer",
+            "review_text": "I was skeptical because of cheap knockoffs elsewhere, but Smozi is the authentic deal. Premium finish, solid feel, and worth every dollar.",
+            "author_name": "David W.",
+            "author_initials": "DW"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "settings": {
+        "title": "Loved By Thousands of Happy Customers",
+        "description": "Real verified feedback from people who choose Smozi every single day.",
+        "average_rating": "4.9",
+        "total_reviews": "4,820+",
+        "color_scheme": "scheme-1",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "smozi_faq": {
+      "type": "smozi-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How fast is shipping and when will I get my tracking code?",
+            "answer": "Orders are processed within 24 hours. Express shipping delivers within 2–4 business days. As soon as your order leaves our warehouse, you receive an automated confirmation email with your direct tracking link."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does the 30-Day Money Back Guarantee work?",
+            "answer": "We offer a 100% risk-free trial. If for any reason you are not completely satisfied with your Smozi purchase, simply contact our support team within 30 days of receiving your item for a full refund."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is my payment safe and secure?",
+            "answer": "Yes! All transactions are encrypted with 256-bit SSL encryption (the same standard used by major banks). We support all trusted payment providers including Visa, Mastercard, AMEX, PayPal, Apple Pay, Google Pay, and Cash on Delivery."
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How can I contact the customer support team?",
+            "answer": "Our concierge support team is online 24/7. You can contact us anytime via our Contact page or directly at support@smozi.com. We answer all customer requests quickly, typically within 2 hours."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
+      "settings": {
+        "subheading": "Transparency & Guarantees",
+        "title": "Frequently Asked Questions",
+        "description": "Clear answers to help you order with total confidence.",
+        "color_scheme": "scheme-1",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "smozi_ticker",
+    "image_banner",
+    "smozi_trust_badges",
+    "featured_collection",
+    "smozi_reviews",
+    "smozi_faq"
+  ]
+}

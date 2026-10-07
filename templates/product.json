@@ -1,0 +1,246 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title"
+        },
+        "price": {
+          "type": "price"
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector"
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description"
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_position": "left",
+        "gallery_layout": "stacked",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "smozi_trust_badges": {
+      "type": "smozi-trust-badges",
+      "blocks": {
+        "badge_1": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shipping",
+            "title": "Free Insured Delivery",
+            "text": "Every shipment is tracked and covered against loss or damage."
+          }
+        },
+        "badge_2": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "guarantee",
+            "title": "30-Day Money-Back Guarantee",
+            "text": "Test it risk-free. Easy returns if you aren't completely thrilled."
+          }
+        },
+        "badge_3": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "lock",
+            "title": "256-Bit SSL Checkout",
+            "text": "Certified encrypted transactions with bank-grade security protocols."
+          }
+        },
+        "badge_4": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "support",
+            "title": "24/7 Dedicated Support",
+            "text": "Have a question? Our support specialists are available around the clock."
+          }
+        }
+      },
+      "block_order": [
+        "badge_1",
+        "badge_2",
+        "badge_3",
+        "badge_4"
+      ],
+      "settings": {
+        "subheading": "Confidence In Every Order",
+        "title": "Our Quality & Trust Guarantees",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "smozi_reviews": {
+      "type": "smozi-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date": "2 days ago",
+            "title": "Exceeded all my expectations!",
+            "review_text": "The attention to detail and packaging was unbelievable. Arrived rapidly and works perfectly.",
+            "author_name": "Jordan P.",
+            "author_initials": "JP"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date": "5 days ago",
+            "title": "Pure quality — highly recommend!",
+            "review_text": "Worth every single cent. Customer service answered my shipping questions within minutes.",
+            "author_name": "Amanda K.",
+            "author_initials": "AK"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date": "1 week ago",
+            "title": "Peace of mind with 30-day guarantee",
+            "review_text": "I ordered with total confidence because of their money-back guarantee, and I'm so glad I did!",
+            "author_name": "Taylor B.",
+            "author_initials": "TB"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "settings": {
+        "title": "Verified Customer Reviews",
+        "description": "See how our products are transforming customer routines worldwide.",
+        "average_rating": "4.9",
+        "total_reviews": "4,820+",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You May Also Like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "smozi_faq": {
+      "type": "smozi-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the return process if I change my mind?",
+            "answer": "We provide a 30-day risk-free return window. Simply email support@smozi.com with your order number, and our team will provide a prepaid return label and issue a prompt refund."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How soon will my order be dispatched?",
+            "answer": "All orders are fulfilled and dispatched within 24 hours Monday through Friday. You will receive an automated tracking link the moment your parcel ships."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are payment transactions 100% secure?",
+            "answer": "Yes. Our checkout processes through certified 256-bit encrypted SSL gateways, supporting Visa, Mastercard, AMEX, PayPal, Apple Pay, Google Pay, and Cash on Delivery."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "settings": {
+        "subheading": "Order With Peace Of Mind",
+        "title": "Product Questions & Guarantees",
+        "description": "Quick answers to help you finalize your decision.",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "smozi_sticky_atc": {
+      "type": "smozi-sticky-atc",
+      "settings": {
+        "button_text": "Add to Cart — 100% Secure"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "smozi_trust_badges",
+    "smozi_reviews",
+    "related-products",
+    "smozi_faq",
+    "smozi_sticky_atc"
+  ]
+}

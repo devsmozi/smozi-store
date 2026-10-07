@@ -1,0 +1,110 @@
+{% comment %}
+  SMOZI TRUST TICKER / MARQUEE SECTION
+  Dynamic rolling bar with trust assertions and social proof.
+{% endcomment %}
+
+<div class="smozi-ticker-section" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+  <div class="smozi-ticker-track">
+    <div class="smozi-ticker-group">
+      {% for block in section.blocks %}
+        <div class="smozi-ticker-item" {{ block.shopify_attributes }}>
+          <span class="smozi-ticker-icon" style="color: {{ section.settings.accent_color }};">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </span>
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Duplicate for seamless continuous loop -->
+    <div class="smozi-ticker-group" aria-hidden="true">
+      {% for block in section.blocks %}
+        <div class="smozi-ticker-item">
+          <span class="smozi-ticker-icon" style="color: {{ section.settings.accent_color }};">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </span>
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Smozi Trust Ticker",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#0f172a"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Icon Accent Color",
+      "default": "#10b981"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ticker_item",
+      "name": "Ticker Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Message",
+          "default": "Free Worldwide Tracked Delivery on All Orders"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Smozi Trust Ticker",
+      "blocks": [
+        {
+          "type": "ticker_item",
+          "settings": {
+            "text": "🚚 Free Tracked & Insured Shipping"
+          }
+        },
+        {
+          "type": "ticker_item",
+          "settings": {
+            "text": "⭐️ 4.9/5 Rating from 12,450+ Verified Customers"
+          }
+        },
+        {
+          "type": "ticker_item",
+          "settings": {
+            "text": "🛡️ 30-Day Money Back Guarantee - No Questions Asked"
+          }
+        },
+        {
+          "type": "ticker_item",
+          "settings": {
+            "text": "🔒 256-Bit Bank-Grade SSL Secure Checkout"
+          }
+        },
+        {
+          "type": "ticker_item",
+          "settings": {
+            "text": "⚡ 99.8% On-Time Delivery Guarantee"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

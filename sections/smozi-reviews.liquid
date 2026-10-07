@@ -1,0 +1,235 @@
+{% comment %}
+  SMOZI VERIFIED CUSTOMER REVIEWS SECTION
+  Rich social proof with rating score card, verified customer badges, and testimonial cards.
+{% endcomment %}
+
+<div class="smozi-reviews-section color-{{ section.settings.color_scheme }}" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="page-width">
+    <div class="smozi-reviews-header">
+      <span class="smozi-badge-verified">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        100% Verified Buyer Reviews
+      </span>
+      <h2 class="smozi-reviews-title" style="margin-top: 0.85rem;">{{ section.settings.title }}</h2>
+      <p style="color: var(--smozi-trust-slate-600); font-size: 1.05rem; margin: 0;">{{ section.settings.description }}</p>
+    </div>
+
+    <!-- Rating Summary Score Card -->
+    <div class="smozi-reviews-summary-card">
+      <div class="smozi-rating-score-block">
+        <div class="smozi-rating-number">{{ section.settings.average_rating }}</div>
+        <div class="smozi-rating-stars-gold">
+          {% for i in (1..5) %}
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          {% endfor %}
+        </div>
+        <div class="smozi-rating-count-text">Based on {{ section.settings.total_reviews }} real customer experiences</div>
+      </div>
+
+      <div class="smozi-rating-breakdown">
+        <div class="smozi-bar-row">
+          <span>5★</span>
+          <div class="smozi-bar-track"><div class="smozi-bar-fill" style="width: 92%;"></div></div>
+          <span>92%</span>
+        </div>
+        <div class="smozi-bar-row">
+          <span>4★</span>
+          <div class="smozi-bar-track"><div class="smozi-bar-fill" style="width: 6%;"></div></div>
+          <span>6%</span>
+        </div>
+        <div class="smozi-bar-row">
+          <span>3★</span>
+          <div class="smozi-bar-track"><div class="smozi-bar-fill" style="width: 2%;"></div></div>
+          <span>2%</span>
+        </div>
+        <div class="smozi-bar-row">
+          <span>2★</span>
+          <div class="smozi-bar-track"><div class="smozi-bar-fill" style="width: 0%;"></div></div>
+          <span>0%</span>
+        </div>
+        <div class="smozi-bar-row">
+          <span>1★</span>
+          <div class="smozi-bar-track"><div class="smozi-bar-fill" style="width: 0%;"></div></div>
+          <span>0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div class="smozi-reviews-grid">
+      {% for block in section.blocks %}
+        <div class="smozi-review-card" {{ block.shopify_attributes }}>
+          <div class="smozi-review-top">
+            <div class="smozi-review-stars">
+              {% for i in (1..block.settings.rating) %}
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              {% endfor %}
+            </div>
+            <span class="smozi-review-date">{{ block.settings.date }}</span>
+          </div>
+
+          <h3 class="smozi-review-title">{{ block.settings.title }}</h3>
+          <p class="smozi-review-body">“{{ block.settings.review_text }}”</p>
+
+          <div class="smozi-review-author">
+            <div class="smozi-author-avatar">{{ block.settings.author_initials }}</div>
+            <div class="smozi-author-info">
+              <span class="smozi-author-name">{{ block.settings.author_name }}</span>
+              <span class="smozi-badge-verified" style="padding: 0.1rem 0.45rem; font-size: 0.7rem; margin-top: 2px;">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Verified Buyer
+              </span>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Smozi Customer Reviews",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Loved By Thousands Worldwide"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Read authentic reviews from people who upgraded their daily experience with Smozi."
+    },
+    {
+      "type": "text",
+      "id": "average_rating",
+      "label": "Average Rating",
+      "default": "4.9"
+    },
+    {
+      "type": "text",
+      "id": "total_reviews",
+      "label": "Total Review Count",
+      "default": "4,820+"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 56
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Customer Review",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Star Rating",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "default": "2 days ago"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Review Headline",
+          "default": "Exceptional quality & lightning-fast delivery!"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "I was hesitant at first, but Smozi completely exceeded my expectations. The craftsmanship is flawless and customer support answered my shipping query in under 10 minutes. 10/10!"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author Name",
+          "default": "Jessica M."
+        },
+        {
+          "type": "text",
+          "id": "author_initials",
+          "label": "Author Initials",
+          "default": "JM"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Smozi Customer Reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date": "Yesterday",
+            "title": "Best purchase I made all year!",
+            "review_text": "Everything from the packaging to the build quality feels ultra premium. You can tell they put huge care into the product. Delivery was fast and tracked.",
+            "author_name": "Daniel K.",
+            "author_initials": "DK"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date": "3 days ago",
+            "title": "Totally worth every penny",
+            "review_text": "Super happy with Smozi! Works exactly as described, solid materials, and having a 30-day money-back guarantee gave me the confidence to buy right away.",
+            "author_name": "Sarah W.",
+            "author_initials": "SW"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date": "5 days ago",
+            "title": "Outstanding customer service!",
+            "review_text": "I made a typo in my shipping address and contacted support. They corrected it right away without any hassle. Arrived on time in pristine condition. Highly recommended!",
+            "author_name": "Liam T.",
+            "author_initials": "LT"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

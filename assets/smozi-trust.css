@@ -1,0 +1,936 @@
+/* ==========================================================================
+   SMOZI STORE - TRUST BUILDING ARCHITECTURE & PREMIUM STYLING
+   ========================================================================== */
+
+:root {
+  --smozi-trust-emerald: #10b981;
+  --smozi-trust-emerald-light: #ecfdf5;
+  --smozi-trust-emerald-dark: #047857;
+  --smozi-trust-blue: #3b82f6;
+  --smozi-trust-blue-light: #eff6ff;
+  --smozi-trust-indigo: #4f46e5;
+  --smozi-trust-amber: #f59e0b;
+  --smozi-trust-amber-light: #fffbeb;
+  --smozi-trust-slate-900: #0f172a;
+  --smozi-trust-slate-800: #1e293b;
+  --smozi-trust-slate-700: #334155;
+  --smozi-trust-slate-600: #475569;
+  --smozi-trust-slate-100: #f1f5f9;
+  --smozi-trust-slate-50: #f8fafc;
+  --smozi-trust-border: rgba(15, 23, 42, 0.08);
+  --smozi-trust-border-hover: rgba(16, 185, 129, 0.35);
+  --smozi-trust-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --smozi-trust-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --smozi-trust-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --smozi-trust-shadow-glow: 0 0 20px rgba(16, 185, 129, 0.15);
+  --smozi-trust-radius-sm: 6px;
+  --smozi-trust-radius-md: 10px;
+  --smozi-trust-radius-lg: 16px;
+  --smozi-trust-radius-full: 9999px;
+  --smozi-trust-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL STYLES & TRUST ACCENTS
+   -------------------------------------------------------------------------- */
+.smozi-badge-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--smozi-trust-emerald-dark);
+  background: var(--smozi-trust-emerald-light);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--smozi-trust-radius-full);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.smozi-badge-verified svg {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+}
+
+.smozi-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--smozi-trust-emerald);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.smozi-pulse-dot::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--smozi-trust-emerald);
+  opacity: 0.75;
+  animation: smozi-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes smozi-ping {
+  0% { transform: scale(1); opacity: 0.8; }
+  75%, 100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   2. TRUST TICKER / MARQUEE BAR
+   -------------------------------------------------------------------------- */
+.smozi-ticker-section {
+  background: var(--smozi-trust-slate-900);
+  color: #ffffff;
+  padding: 0.75rem 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.smozi-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: smozi-ticker-scroll 35s linear infinite;
+}
+
+.smozi-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes smozi-ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.smozi-ticker-group {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+.smozi-ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.smozi-ticker-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--smozi-trust-emerald);
+}
+
+.smozi-ticker-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   3. TRUST BADGES GRID SECTION
+   -------------------------------------------------------------------------- */
+.smozi-trust-section {
+  padding: 3.5rem 0;
+  background: var(--smozi-trust-slate-50);
+  border-top: 1px solid var(--smozi-trust-border);
+  border-bottom: 1px solid var(--smozi-trust-border);
+}
+
+.smozi-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 990px) {
+  .smozi-trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .smozi-trust-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.smozi-trust-card {
+  background: #ffffff;
+  padding: 1.75rem 1.5rem;
+  border-radius: var(--smozi-trust-radius-md);
+  border: 1px solid var(--smozi-trust-border);
+  box-shadow: var(--smozi-trust-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: var(--smozi-trust-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.smozi-trust-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--smozi-trust-border-hover);
+  box-shadow: var(--smozi-trust-shadow-md), var(--smozi-trust-shadow-glow);
+}
+
+.smozi-trust-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--smozi-trust-radius-sm);
+  background: var(--smozi-trust-emerald-light);
+  color: var(--smozi-trust-emerald-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.smozi-trust-card-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.smozi-trust-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--smozi-trust-slate-900);
+  margin: 0 0 0.35rem 0;
+}
+
+.smozi-trust-card-desc {
+  font-size: 0.875rem;
+  color: var(--smozi-trust-slate-600);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* --------------------------------------------------------------------------
+   4. PRODUCT PAGE TRUST ARCHITECTURE (smozi-product-trust)
+   -------------------------------------------------------------------------- */
+.smozi-product-trust-wrapper {
+  margin: 1.75rem 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Live Viewers & Urgency */
+.smozi-live-stat-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.85rem 1.15rem;
+  background: #ffffff;
+  border-radius: var(--smozi-trust-radius-md);
+  border: 1px solid var(--smozi-trust-border);
+  box-shadow: var(--smozi-trust-shadow-sm);
+  font-size: 0.875rem;
+  color: var(--smozi-trust-slate-800);
+}
+
+.smozi-live-stat-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.smozi-live-stat-item strong {
+  color: var(--smozi-trust-slate-900);
+  margin: 0 0.25rem;
+}
+
+.smozi-urgency-stock {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 0.85rem;
+  background: #fef2f2;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--smozi-trust-radius-full);
+}
+
+/* Delivery Estimator */
+.smozi-delivery-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 1.15rem;
+  background: var(--smozi-trust-slate-50);
+  border: 1px dashed rgba(16, 185, 129, 0.4);
+  border-radius: var(--smozi-trust-radius-md);
+}
+
+.smozi-delivery-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--smozi-trust-emerald-dark);
+  flex-shrink: 0;
+}
+
+.smozi-delivery-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.smozi-delivery-text {
+  font-size: 0.875rem;
+  color: var(--smozi-trust-slate-700);
+  line-height: 1.45;
+}
+
+.smozi-delivery-date {
+  font-weight: 700;
+  color: var(--smozi-trust-slate-900);
+}
+
+/* Guarantee Seals Box */
+.smozi-guarantee-seal-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  background: linear-gradient(135deg, #ffffff 0%, var(--smozi-trust-slate-50) 100%);
+  border-radius: var(--smozi-trust-radius-md);
+  border: 1px solid var(--smozi-trust-border);
+}
+
+.smozi-guarantee-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--smozi-trust-amber-light);
+  color: var(--smozi-trust-amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.smozi-guarantee-badge-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.smozi-guarantee-content h4 {
+  margin: 0 0 0.2rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--smozi-trust-slate-900);
+}
+
+.smozi-guarantee-content p {
+  margin: 0;
+  font-size: 0.825rem;
+  color: var(--smozi-trust-slate-600);
+}
+
+/* Payment Icons Bar */
+.smozi-payment-trust-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem 1.15rem;
+  background: #ffffff;
+  border-radius: var(--smozi-trust-radius-md);
+  border: 1px solid var(--smozi-trust-border);
+}
+
+.smozi-payment-trust-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--smozi-trust-slate-600);
+}
+
+.smozi-payment-trust-heading span.smozi-ssl-secure {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--smozi-trust-emerald-dark);
+}
+
+.smozi-payment-icons-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.smozi-payment-pill {
+  height: 26px;
+  padding: 0 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--smozi-trust-slate-100);
+  border-radius: var(--smozi-trust-radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--smozi-trust-slate-700);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.smozi-payment-pill svg {
+  height: 16px;
+  width: auto;
+}
+
+/* --------------------------------------------------------------------------
+   5. STICKY ADD-TO-CART ARCHITECTURE (smozi-sticky-atc)
+   -------------------------------------------------------------------------- */
+.smozi-sticky-atc-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--smozi-trust-border);
+  padding: 0.75rem 0;
+  transform: translateY(110%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smozi-sticky-atc-bar.smozi-visible {
+  transform: translateY(0);
+}
+
+.smozi-sticky-atc-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.smozi-sticky-product-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.smozi-sticky-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--smozi-trust-radius-sm);
+  object-fit: cover;
+  border: 1px solid var(--smozi-trust-border);
+  flex-shrink: 0;
+}
+
+.smozi-sticky-details {
+  min-width: 0;
+}
+
+.smozi-sticky-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--smozi-trust-slate-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.smozi-sticky-price-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.smozi-sticky-price {
+  font-weight: 700;
+  color: var(--smozi-trust-slate-900);
+  font-size: 1rem;
+}
+
+.smozi-sticky-compare-price {
+  text-decoration: line-through;
+  color: var(--smozi-trust-slate-600);
+  font-size: 0.85rem;
+}
+
+.smozi-sticky-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.smozi-sticky-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--smozi-trust-slate-700);
+  white-space: nowrap;
+}
+
+.smozi-sticky-trust-badge svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--smozi-trust-emerald);
+}
+
+.smozi-sticky-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--smozi-trust-slate-900);
+  color: #ffffff;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--smozi-trust-radius-md);
+  border: none;
+  cursor: pointer;
+  transition: var(--smozi-trust-transition);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+}
+
+.smozi-sticky-btn:hover {
+  background: var(--smozi-trust-indigo);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+}
+
+@media (max-width: 768px) {
+  .smozi-sticky-trust-badge {
+    display: none;
+  }
+  .smozi-sticky-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. VERIFIED CUSTOMER REVIEWS & TESTIMONIALS SECTION
+   -------------------------------------------------------------------------- */
+.smozi-reviews-section {
+  padding: 4.5rem 0;
+  background: #ffffff;
+}
+
+.smozi-reviews-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem auto;
+}
+
+.smozi-reviews-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--smozi-trust-slate-900);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.02em;
+}
+
+.smozi-reviews-summary-card {
+  background: var(--smozi-trust-slate-50);
+  border-radius: var(--smozi-trust-radius-lg);
+  border: 1px solid var(--smozi-trust-border);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.smozi-rating-score-block {
+  text-align: center;
+}
+
+.smozi-rating-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--smozi-trust-slate-900);
+  line-height: 1;
+}
+
+.smozi-rating-stars-gold {
+  color: var(--smozi-trust-amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  margin: 0.5rem 0;
+}
+
+.smozi-rating-stars-gold svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.smozi-rating-count-text {
+  font-size: 0.875rem;
+  color: var(--smozi-trust-slate-600);
+}
+
+.smozi-rating-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 260px;
+}
+
+.smozi-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--smozi-trust-slate-700);
+}
+
+.smozi-bar-track {
+  flex: 1;
+  height: 8px;
+  background: var(--smozi-trust-slate-100);
+  border-radius: var(--smozi-trust-radius-full);
+  overflow: hidden;
+}
+
+.smozi-bar-fill {
+  height: 100%;
+  background: var(--smozi-trust-amber);
+  border-radius: var(--smozi-trust-radius-full);
+}
+
+.smozi-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 990px) {
+  .smozi-reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .smozi-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.smozi-review-card {
+  background: #ffffff;
+  border: 1px solid var(--smozi-trust-border);
+  border-radius: var(--smozi-trust-radius-md);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--smozi-trust-shadow-sm);
+  transition: var(--smozi-trust-transition);
+}
+
+.smozi-review-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: var(--smozi-trust-shadow-md);
+}
+
+.smozi-review-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.smozi-review-stars {
+  color: var(--smozi-trust-amber);
+  display: flex;
+  gap: 2px;
+}
+
+.smozi-review-stars svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.smozi-review-date {
+  font-size: 0.8rem;
+  color: var(--smozi-trust-slate-600);
+}
+
+.smozi-review-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--smozi-trust-slate-900);
+  margin: 0 0 0.5rem 0;
+}
+
+.smozi-review-body {
+  font-size: 0.925rem;
+  color: var(--smozi-trust-slate-700);
+  line-height: 1.55;
+  margin: 0 0 1.25rem 0;
+  flex: 1;
+}
+
+.smozi-review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--smozi-trust-border);
+}
+
+.smozi-author-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--smozi-trust-slate-100);
+  color: var(--smozi-trust-slate-700);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smozi-author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.smozi-author-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--smozi-trust-slate-900);
+}
+
+/* --------------------------------------------------------------------------
+   7. TRUST & RISK-REVERSAL FAQ ACCORDION SECTION
+   -------------------------------------------------------------------------- */
+.smozi-faq-section {
+  padding: 4.5rem 0;
+  background: var(--smozi-trust-slate-50);
+  border-top: 1px solid var(--smozi-trust-border);
+}
+
+.smozi-faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.smozi-faq-header {
+  text-align: center;
+  margin-bottom: 2.75rem;
+}
+
+.smozi-faq-subtitle {
+  color: var(--smozi-trust-emerald-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.825rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.smozi-faq-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--smozi-trust-slate-900);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.smozi-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.smozi-faq-item {
+  background: #ffffff;
+  border: 1px solid var(--smozi-trust-border);
+  border-radius: var(--smozi-trust-radius-md);
+  overflow: hidden;
+  transition: var(--smozi-trust-transition);
+}
+
+.smozi-faq-item:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.smozi-faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--smozi-trust-slate-900);
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.smozi-faq-icon-chevron {
+  width: 20px;
+  height: 20px;
+  fill: var(--smozi-trust-slate-600);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.smozi-faq-item.smozi-open .smozi-faq-icon-chevron {
+  transform: rotate(180deg);
+  fill: var(--smozi-trust-emerald-dark);
+}
+
+.smozi-faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+  padding: 0 1.5rem;
+}
+
+.smozi-faq-item.smozi-open .smozi-faq-content {
+  max-height: 500px;
+  transition: max-height 0.45s ease-in-out;
+  padding: 0 1.5rem 1.35rem 1.5rem;
+}
+
+.smozi-faq-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--smozi-trust-slate-700);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   8. REAL-TIME SALES NOTIFICATION TOAST (smozi-sales-popup)
+   -------------------------------------------------------------------------- */
+.smozi-sales-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 998;
+  background: #ffffff;
+  border-radius: var(--smozi-trust-radius-md);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--smozi-trust-border);
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  max-width: 340px;
+  transform: translateY(120%) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smozi-sales-toast.smozi-show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.smozi-toast-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--smozi-trust-radius-sm);
+  background: var(--smozi-trust-slate-100);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.smozi-toast-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.smozi-toast-buyer {
+  font-size: 0.825rem;
+  color: var(--smozi-trust-slate-700);
+}
+
+.smozi-toast-buyer strong {
+  color: var(--smozi-trust-slate-900);
+}
+
+.smozi-toast-item {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--smozi-trust-slate-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.smozi-toast-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--smozi-trust-slate-600);
+  margin-top: 0.15rem;
+}
+
+.smozi-toast-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: none;
+  border: none;
+  color: var(--smozi-trust-slate-600);
+  cursor: pointer;
+  padding: 2px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+@media (max-width: 600px) {
+  .smozi-sales-toast {
+    bottom: 80px;
+    left: 12px;
+    right: 12px;
+    max-width: none;
+  }
+}

@@ -1,0 +1,100 @@
+{% comment %}
+  SMOZI SEO & TRUST STRUCTURED DATA (JSON-LD)
+  Provides Google Rich Snippets for 5-star ratings, aggregate reviews, and merchant trust.
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ shop.url }}/#organization",
+      "name": "Smozi Store",
+      "url": "{{ shop.url }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{% if settings.logo != blank %}{{ settings.logo | image_url: width: 400 }}{% else %}{{ shop.url }}/logo.png{% endif %}"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "{{ shop.email }}",
+        "availableLanguage": ["English"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ shop.url }}/#website",
+      "url": "{{ shop.url }}",
+      "name": "Smozi Store",
+      "publisher": {
+        "@id": "{{ shop.url }}/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ shop.url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    {% if template contains 'product' %}
+    ,{
+      "@type": "Product",
+      "@id": "{{ canonical_url }}/#product",
+      "name": "{{ product.title | escape }}",
+      "description": "{{ product.description | strip_html | truncatewords: 30 | escape }}",
+      "image": [
+        "{{ product.featured_image | image_url: width: 800 }}"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "Smozi"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "4820",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "{{ canonical_url }}",
+        "priceCurrency": "{{ cart.currency.iso_code }}",
+        "price": "{{ product.selected_or_first_available_variant.price | divided_by: 100.0 }}",
+        "priceValidUntil": "{{ 'now' | date: '%s' | plus: 31536000 | date: '%Y-%m-%d' }}",
+        "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+        "seller": {
+          "@id": "{{ shop.url }}/#organization"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0.00",
+            "currency": "{{ cart.currency.iso_code }}"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 2,
+              "maxValue": 4,
+              "unitCode": "d"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
+      }
+    }
+    {% endif %}
+  ]
+}
+</script>

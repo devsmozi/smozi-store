@@ -1,0 +1,65 @@
+{% comment %}
+  SMOZI STICKY ADD-TO-CART (ATC) SECTION
+  Appears at the bottom of product pages when user scrolls past the main buy button.
+{% endcomment %}
+
+{% if template contains 'product' and product.available %}
+  <div class="smozi-sticky-atc-bar" id="SmoziStickyAtc">
+    <div class="page-width smozi-sticky-atc-inner">
+      <div class="smozi-sticky-product-info">
+        {% if product.featured_image %}
+          <img
+            class="smozi-sticky-thumb"
+            src="{{ product.featured_image | image_url: width: 120, height: 120, crop: 'center' }}"
+            alt="{{ product.title | escape }}"
+            loading="lazy"
+            width="52"
+            height="52"
+          >
+        {% endif %}
+        <div class="smozi-sticky-details">
+          <p class="smozi-sticky-title">{{ product.title }}</p>
+          <div class="smozi-sticky-price-row">
+            <span class="smozi-sticky-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+            {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+              <span class="smozi-sticky-compare-price">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="smozi-sticky-actions">
+        <div class="smozi-sticky-trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          <span>30-Day Money-Back Guarantee</span>
+        </div>
+
+        <button type="button" class="smozi-sticky-btn">
+          <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          <span>{{ section.settings.button_text | default: 'Add to Cart — 100% Secure' }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Smozi Sticky Add-to-Cart",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Label",
+      "default": "Add to Cart — 100% Secure"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Smozi Sticky Add-to-Cart"
+    }
+  ]
+}
+{% endschema %}
